@@ -4,7 +4,10 @@
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to MoodAnalyser Problem");
+            MoodAnalyser mood = new MoodAnalyser();
+            Console.WriteLine("Enter The Mood");
+            string message = Console.ReadLine();
+            MoodAnalyser.AnalyseMood(message);
         }
     }
 }
