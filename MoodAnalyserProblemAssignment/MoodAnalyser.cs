@@ -16,13 +16,20 @@ namespace MoodAnalyserProblemAssignment
         }
         public string AnalyseMood()
         {
-            if (message.Contains("Sad") || message.Contains("sad"))
+            if (!string.IsNullOrEmpty(message))
             {
-                return "Sad";
+                if (message.Contains("Sad") || message.Contains("sad"))
+                {
+                    return "Sad";
+                }
+                else
+                {
+                    return "Happy";
+                }
             }
             else
             {
-                return "Happy";
+                throw new MoodAnalyserException("Getting null or empty value");
             }
         }
     }
