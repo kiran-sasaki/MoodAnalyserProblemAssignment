@@ -19,5 +19,19 @@ namespace MoodAnalyserTest
                 Console.WriteLine(e.Message);
             }
         }
+        //UC1.2
+        [TestMethod]
+        public void WhenGivenHappyMessage_shouldReturnHappy()
+        {
+            try
+            {
+                string message = MoodAnalyser.AnalyseMood("i am Happy");
+                Assert.AreEqual("Sad", message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 }
