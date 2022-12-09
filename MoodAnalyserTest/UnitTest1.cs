@@ -37,9 +37,9 @@ namespace MoodAnalyserTest
         }
         //UC2.1
         [TestMethod]
-        public void WhenGivenHappyMessage_shouldReturnEmpty()
+        public void WhenGivenNull_ShouldReturnHappy()
         {
-            MoodAnalyser mood = new MoodAnalyser("");
+            MoodAnalyser mood = new MoodAnalyser(null);
             try
             {
                 string message = mood.AnalyseMood();
