@@ -65,6 +65,21 @@ namespace MoodAnalyserTest
                 Console.WriteLine("Mood should not be null", e.Message);
             }
         }
+        //3.2
+        [TestMethod]
+        public void given_Empty_Mood_Should_Throw_MoodAnalyserCustomException_Indocating_Empty_Mood()
+        {
+            try
+            {
+                string message = "";
+                MoodAnalyser moodAnalyzer = new MoodAnalyser(message);
+                string mood = moodAnalyzer.AnalyseMood();
+            }
+            catch (MoodAnalyserException e)
+            {
+                Console.WriteLine("Mood should not be Empty", e.Message);
+            }
+        }
     }
 
 }
