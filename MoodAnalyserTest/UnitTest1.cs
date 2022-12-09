@@ -103,6 +103,21 @@ namespace MoodAnalyserTest
                 Console.WriteLine(e.Message);
             }
         }
+        //UC4.3
+        [TestMethod]
+        public void Given_MoodAnalyser_Constructor_Name_Improper_Should_Throw_MoodAnalyserException()
+        {
+            try
+            {
+                object expected = new MoodAnalyser();
+                object obj = MoodAnalayserFactory.CreateMoodAnalyse("MoodAnalyzer.MoodAr", "Mood");
+                expected.Equals(obj);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 
 }
