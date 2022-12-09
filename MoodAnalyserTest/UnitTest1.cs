@@ -35,6 +35,21 @@ namespace MoodAnalyserTest
                 Console.WriteLine(e.Message);
             }
         }
+        //UC2.1
+        [TestMethod]
+        public void WhenGivenHappyMessage_shouldReturnEmpty()
+        {
+            MoodAnalyser mood = new MoodAnalyser("");
+            try
+            {
+                string message = mood.AnalyseMood();
+                Assert.AreEqual("Happy", message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 
 }
