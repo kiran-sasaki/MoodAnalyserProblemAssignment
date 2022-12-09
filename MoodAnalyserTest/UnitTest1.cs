@@ -88,6 +88,21 @@ namespace MoodAnalyserTest
             object obj = MoodAnalayserFactory.CreateMoodAnalyse("MoodAnalyserProblemAssignment.MoodAnalyser", "MoodAnalyser");
             expected.Equals(obj);
         }
+        //UC4.2
+        [TestMethod]
+        public void Given_MoodAnalyser_ClassName_ImproperShould_Throw_MoodAnalyserException()
+        {
+            try
+            {
+                object expected = new MoodAnalyser();
+                object obj = MoodAnalayserFactory.CreateMoodAnalyse("erMoodAnalyserProblemAssignment.MoodAnalys", "MoodAnalyser");
+                expected.Equals(obj);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 
 }
