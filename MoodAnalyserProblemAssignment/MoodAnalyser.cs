@@ -16,8 +16,12 @@ namespace MoodAnalyserProblemAssignment
         }
         public string AnalyseMood()
         {
-            if (!string.IsNullOrEmpty(message))
+            try
             {
+                if (this.message.Equals(string.Empty))
+                {
+                    throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.EMPTY_MESSAGE, "Mood should not be empty");
+                }
                 if (message.Contains("Sad") || message.Contains("sad"))
                 {
                     return "Sad";
@@ -27,9 +31,11 @@ namespace MoodAnalyserProblemAssignment
                     return "Happy";
                 }
             }
-            else
+            catch (NullReferenceException)
             {
-                throw new MoodAnalyserException("Getting null or empty value");
+                {
+                    throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.NULL_MESSAGE, "mood should not be null ");
+                }
             }
         }
     }
