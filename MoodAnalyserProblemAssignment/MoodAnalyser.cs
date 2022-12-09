@@ -9,6 +9,10 @@ namespace MoodAnalyserProblemAssignment
     public class MoodAnalyser
     {
         private string message;
+        public MoodAnalyser()
+        {
+
+        }
 
         public MoodAnalyser(string message)
         {
