@@ -80,37 +80,52 @@ namespace MoodAnalyserTest
                 Console.WriteLine("Mood should not be Empty", e.Message);
             }
         }
-        //UC4.1
+        ////UC4.1
+        //[TestMethod]
+        //public void Given_MoodAnalyser_ClassName_Should_Return_MoodAnalyser_Object()
+        //{
+        //    object expected = new MoodAnalyser();
+        //    object obj = MoodAnalayserFactory.CreateMoodAnalyse("MoodAnalyserProblemAssignment.MoodAnalyser", "MoodAnalyser");
+        //    expected.Equals(obj);
+        //}
+        ////UC4.2
+        //[TestMethod]
+        //public void Given_MoodAnalyser_ClassName_ImproperShould_Throw_MoodAnalyserException()
+        //{
+        //    try
+        //    {
+        //        object expected = new MoodAnalyser();
+        //        object obj = MoodAnalayserFactory.CreateMoodAnalyse("erMoodAnalyserProblemAssignment.MoodAnalys", "MoodAnalyser");
+        //        expected.Equals(obj);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine(e.Message);
+        //    }
+        //}
+        ////UC4.3
+        //[TestMethod]
+        //public void Given_MoodAnalyser_Constructor_Name_Improper_Should_Throw_MoodAnalyserException()
+        //{
+        //    try
+        //    {
+        //        object expected = new MoodAnalyser();
+        //        object obj = MoodAnalayserFactory.CreateMoodAnalyse("MoodAnalyzer.MoodAr", "Mood");
+        //        expected.Equals(obj);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine(e.Message);
+        //    }
+        //}
+        //UC5.1
         [TestMethod]
-        public void Given_MoodAnalyser_ClassName_Should_Return_MoodAnalyser_Object()
-        {
-            object expected = new MoodAnalyser();
-            object obj = MoodAnalayserFactory.CreateMoodAnalyse("MoodAnalyserProblemAssignment.MoodAnalyser", "MoodAnalyser");
-            expected.Equals(obj);
-        }
-        //UC4.2
-        [TestMethod]
-        public void Given_MoodAnalyser_ClassName_ImproperShould_Throw_MoodAnalyserException()
+        public void Given_MoodAnalyser_Class_Name_Should_Return_MoodAnalyser_Object_Using_Parameeterized_ConstrctrutorImproper()
         {
             try
             {
-                object expected = new MoodAnalyser();
-                object obj = MoodAnalayserFactory.CreateMoodAnalyse("erMoodAnalyserProblemAssignment.MoodAnalys", "MoodAnalyser");
-                expected.Equals(obj);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
-        //UC4.3
-        [TestMethod]
-        public void Given_MoodAnalyser_Constructor_Name_Improper_Should_Throw_MoodAnalyserException()
-        {
-            try
-            {
-                object expected = new MoodAnalyser();
-                object obj = MoodAnalayserFactory.CreateMoodAnalyse("MoodAnalyzer.MoodAr", "Mood");
+                object expected = new MoodAnalyser("Happy");
+                object obj = MoodAnalayserFactory.CreateMoodAnalyse("MoodAnalyserProblemAssignment.MoodAnalyser", "MoodAnalyser", "Happy");
                 expected.Equals(obj);
             }
             catch (Exception e)
@@ -119,5 +134,4 @@ namespace MoodAnalyserTest
             }
         }
     }
-
 }
