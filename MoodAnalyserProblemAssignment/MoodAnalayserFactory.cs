@@ -14,8 +14,8 @@ namespace MoodAnalyserProblemAssignment
         {
             try
             {
-                Type type = Type.GetType("MoodAnalyzerProblem.MoodAnalyzer");
-                object moodAnalyseObject = MoodAnalayserFactory.CreateMoodAnalyse("MoodAnalyzerProblem.MoodAnalyzer", "MoodAnalyzer", "Happy");
+                Type type = Type.GetType("MoodAnalyserProblemAssignment.MoodAnalyser");
+                object moodAnalyseObject = MoodAnalayserFactory.CreateMoodAnalyse("MoodAnalyserProblemAssignment.MoodAnalyser", "MoodAnalyser", "Happy");
                 MethodInfo analyseMoodInfo = type.GetMethod(methodName);
                 object mood = analyseMoodInfo.Invoke(moodAnalyseObject, null);
                 return mood.ToString();
@@ -23,9 +23,6 @@ namespace MoodAnalyserProblemAssignment
             catch (NullReferenceException)
             {
                 throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.NO_SUCH_METHOD, "Method is not found");
-            }
-            {
-
             }
         }
         public static object CreateMoodAnalyse(string className, string constructorName, string message)
