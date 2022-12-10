@@ -148,5 +148,20 @@ namespace MoodAnalyserTest
                 Console.WriteLine(e.Message);
             }
         }
+        //UC5.3
+        [TestMethod]
+        public void Given_MoodAnalyser_Method_Name_If_Improper_Should_Throw_MoodAnalyserException()
+        {
+            try
+            {
+                object expected = new MoodAnalyser("Happy");
+                object obj = MoodAnalayserFactory.CreateMoodAnalyse("MoodAnalyzerProblemAssignment.MoodAnalyzer", "MoodAnal", "Happy");
+                expected.Equals(obj);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
     }
 }
