@@ -10,7 +10,7 @@ namespace MoodAnalyserProblemAssignment
 {
     public class MoodAnalayserFactory
     {
-        public static string InvokedAnalyseMood(string message, string methodName)
+        public static string? InvokedAnalyseMood(string message, string methodName)
         {
             try
             {
@@ -20,9 +20,10 @@ namespace MoodAnalyserProblemAssignment
                 object mood = analyseMoodInfo.Invoke(moodAnalyseObject, null);
                 return mood.ToString();
             }
-            catch (NullReferenceException)
+            catch (Exception)
             {
-                throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.NO_SUCH_METHOD, "Method is not found");
+                MoodAnalyserException exp = new MoodAnalyserException(MoodAnalyserException.ExceptionType.NO_SUCH_METHOD, "Method is not found");
+                return exp.Message;
             }
         }
         public static object CreateMoodAnalyse(string className, string constructorName, string message)
