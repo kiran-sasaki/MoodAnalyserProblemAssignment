@@ -164,11 +164,19 @@ namespace MoodAnalyserTest
             }
         }
         //UC6.1
+        //[TestMethod]
+        //public void GivenHappyShouldReturnHappy()
+        //{
+        //    string expected = "Happy";
+        //    string mood = MoodAnalayserFactory.InvokedAnalyseMood("Happy", "AnalyseMood");
+        //    Assert.AreEqual(expected, mood);
+        //}
+        //UC6.2
         [TestMethod]
-        public void GivenHappyShouldReturnHappy()
+        public void GivenHappyMessage_WhenImproperMethod_ShouldThrowMoodAnalysisException()
         {
-            string expected = "Happy";
-            string mood = MoodAnalayserFactory.InvokedAnalyseMood("Happy", "AnalyseMood");
+            string expected = "Method is not found";
+            string mood = MoodAnalayserFactory.InvokedAnalyseMood("Happy", "Analyse");
             Assert.AreEqual(expected, mood);
         }
     }
